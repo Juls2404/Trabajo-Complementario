@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cancion.css">
+    <title>Registro Cancion</title>
+</head>
+<body>
+    <!-- En este h1 ponemos el nombre de la pagina -->
+    <h1>Cancion</h1>
+    <!-- En este div ponemos la clase que nos va a servir para darle estilo en el css -->
+    <!-- IMPORTANTE: Todos los divs acontinuacion son las clases para el css -->
+    <div class="container-album">
+        <!-- A partir de aquí empieza el formulario  -->
+        
+        <form id="Album">
+        <div class="container-nombre">
+            <!-- Con el label ponemos el tecto que va a ir sobre el input -->
+        <label for="nombre_Album">Nombre:</label><br>
+            <!-- El imput sirve para ingresar los datos que le estamos pidiendo al usuario -->
+        <input type="text" id="nombre_Album" name="nombre_Album" required><br><br>
+        </div>
+        <div class="container-fecha">
+        <label for="fecha_Lanzamiento">Fecha de lanzamiento:</label><br>
+        <input type="fecha_Lanzamiento" id="fecha_Lanzamiento" name="fecha_Lanzamiento" required><br><br>
+        </div>
+        <div class="container-fecha">
+        <label for="fecha_Lanzamiento">Artista:</label><br>
+        <input type="fecha_Lanzamiento" id="fecha_Lanzamiento" name="fecha_Lanzamiento" required><br><br>
+        </div>
+        <div>
+        <input type="submit" value="Enviar">
+        </div>
+        </form>
+    </div>
+
+    <!-- en esta parte ingresamos el texto de js que necesitamos para darle interaccion a la pagina -->
+    <script>
+        //Aquí obtenemos la informacion digitada en el formulario gracias al ID
+        var formulario_Album = document.getElementById("Album");
+
+        //Aquí hacemos que el formulario envie la información
+        formulario_Album.addEventListener("submit", function(event) {
+            // Prevenir el comportamiento predeterminado del formulario
+            event.preventDefault();
+
+            // Aquí obtenemos los datos del formulario en variables
+            var Album = document.getElementById("nombre_Album").value;
+            var fecha_Lanzamiento = document.getElementById("fecha_Lanzamiento").value;
+            var artista = document.getElementById("artista").value;
+
+            // Mostrar los datos en la consola
+            console.log("Nombre de la canción: " + Album);
+            console.log("Fecha de lanzamiento: " + fecha_Lanzamiento);
+            console.log("Tiempo de duración:" + artista);
+            // Aquí limpiamos el fonmuario cada vez que el usuario le de al botón enviar
+            formulario_Album.reset();
+        });
+    </script>
+</body>
+</html>
